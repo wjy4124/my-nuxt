@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <template v-for="v in 4">
-      <nuxt-link :to="`/?a=${v}`">{{v}}</nuxt-link> -
+      <nuxt-link :to="`/?a=${v}`">{{v}}</nuxt-link> - |
     </template>
   </div>
 </template>
