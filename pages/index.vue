@@ -1,34 +1,20 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        my-nuxt
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <template v-for="v in 4">
+      <nuxt-link :to="`/?a=${v}`">{{v}}</nuxt-link> -
+    </template>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  key(route) {
+    return route.fullPath
+  },
+  fetch() {
+    console.info(2)
+  }
+}
 </script>
 
 <style>
